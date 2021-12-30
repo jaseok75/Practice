@@ -1,3 +1,9 @@
+"""
+Project: 백준 1639
+Date: 2021.12.31.금
+Status: 시간 초과남..
+"""
+
 input_data = input()
 mid = len (input_data) // 2
 left, right = 0, 0
