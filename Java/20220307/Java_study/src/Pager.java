@@ -1,11 +1,9 @@
-import javax.swing.text.html.HTML;
-
 public class Pager {
 	long totalCount;
 	long pageIndex;
-	long totalPage;	// ÀüÃ¼ ÆäÀÌÁö ¼ö
-	long pageList = 10;	// ÇÑ ÆäÀÌÁö¿¡¼­ º¸¿©Áö´Â ±ÛÀÇ ¸ñ·Ï ¼ö
-	long rangeSize = 10;	// ÇÑ ºí·° ´ç ÆäÀÌÁö ¼ö
+	long totalPage;	// ì „ì²´ í˜ì´ì§€ ìˆ˜
+	long pageList = 10;	// í•œ í˜ì´ì§€ì—ì„œ ë³´ì—¬ì§€ëŠ” ê¸€ì˜ ëª©ë¡ ìˆ˜
+	long rangeSize = 10;	// í•œ ë¸”ëŸ­ ë‹¹ í˜ì´ì§€ ìˆ˜
 	int curRange;
 	long startPage = 0;
 	int endPage = 1;
@@ -26,8 +24,8 @@ public class Pager {
 		String rtnHtml = "";
 		long tempCount = 0;
 		
-		rtnHtml += "<a href='#'>[Ã³À½]</a>\r\n";
-		rtnHtml += "<a href='#'>[ÀÌÀü]</a>\r\n\r\n";
+		rtnHtml += "<a href='#'>[ì²˜ìŒ]</a>\r\n";
+		rtnHtml += "<a href='#'>[ì´ì „]</a>\r\n\r\n";
 		
 		if (pageIndex > rangeSize) {
 			startPage = rangeSize + 1;
@@ -46,8 +44,8 @@ public class Pager {
 			continue;
 		}
 		
-		rtnHtml += "\r\n<a gref='#'>[´ÙÀ½]</a>\r\n";
-		rtnHtml += "<a gref='#'>[¸¶Áö¸·]</a>\r\n";
+		rtnHtml += "\r\n<a gref='#'>[ë‹¤ìŒ]</a>\r\n";
+		rtnHtml += "<a gref='#'>[ë§ˆì§€ë§‰]</a>\r\n";
 		
 		return rtnHtml;
 	}
