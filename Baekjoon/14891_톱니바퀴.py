@@ -19,15 +19,14 @@ def turn(gear, num, direct):
     turn_gear.append((num, direct))
     while turn_gear:
         num, direct = turn_gear.popleft()
+        # 양 옆에 톱니바퀴 확인해서 돌릴 톱니바퀴 선택
         for i in range(2):
             connect_gear = num + connect[i]
             if 0 <= connect_gear < 4 and not default_num.count(connect_gear) and gear[connect_gear][2 * (-connect[i])] != gear[num][2 * connect[i]]:
                 turn_gear.append((connect_gear, direct * (-1)))
                 default_num.append(connect_gear)
-        if direct == -1:
-            gear[num] = gear[num][1:] + gear[num][:1]
-        else:
-            gear[num] = gear[num][7:] + gear[num][:7]
+        # 톱니바퀴 회전
+        gear[num] = gear[num][direct * (-1):] + gear[num][:direct * (-1)]
     return gear
 
 
