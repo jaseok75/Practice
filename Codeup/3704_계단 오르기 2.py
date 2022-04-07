@@ -1,5 +1,5 @@
 """
-Project: codeup_계단 오르기2.py
+Project: codeup_3704계단 오르기2.py
 Date: 2022.04.08.금.
 Comment:
 - 동적계획법
